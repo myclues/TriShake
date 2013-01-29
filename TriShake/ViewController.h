@@ -13,5 +13,7 @@
 @property (strong, nonatomic )NSMutableArray *rowOneItems;
 @property (strong, nonatomic )NSMutableArray *rowTwoItems;
 @property (strong, nonatomic )NSMutableArray *rowThreeItems;
+@property (strong, nonatomic) IBOutlet UITextView *workoutResults;
+- (IBAction)findWorkout:(id)sender;
 
 @end
