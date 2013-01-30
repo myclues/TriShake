@@ -3,21 +3,34 @@
 
 
 #import "ViewController.h"
+#import "workoutList.h"
+#import "MyWorkoutList.h"
+
 @interface ViewController (){
     NSMutableArray *rowOneItems;
     NSMutableArray *rowTwoItems;
     NSMutableArray *rowThreeItems;
 }
 @end
+
 @implementation ViewController
 @synthesize pickerView;
 @synthesize rowOneItems;
 @synthesize rowTwoItems;
 @synthesize rowThreeItems;
 @synthesize workoutResults;
+@synthesize workouts;
 
 - (void)viewDidLoad
 {
+    
+    MyWorkoutList * myworkouts =[[MyWorkoutList alloc] init];
+    self.workouts = [myworkouts getMyWorkout];
+    //blahhhhh this line isn't working
+    //[self.workoutResults setText:((workoutList *) [self.workouts objectAtIndex:0]).description];
+    
+    //set up arrays
+    
     [super viewDidLoad];
     pickerView.delegate = self;
     pickerView.dataSource = self;
@@ -32,18 +45,18 @@
 - (void)viewDidUnload
 {
     [self setPickerView:nil];
+        [self setWorkoutResults:nil];
+        [super viewDidUnload];
+    }
     
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
-}
-- (BOOL)shouldAutorotateToInterfaceOrientation:(UIInterfaceOrientation)interfaceOrientation
-{
-    return (interfaceOrientation != UIInterfaceOrientationPortraitUpsideDown);
-}
+
+
+
 #pragma mark - Picker Methods -
 -(NSInteger)numberOfComponentsInPickerView:(UIPickerView *)pickerView{
     return 3;
 }
+    
 -(NSInteger)pickerView:(UIPickerView *)pickerView numberOfRowsInComponent:(NSInteger)component{
     if (component == 1) 
         return [self.rowTwoItems count];
@@ -57,6 +70,8 @@
     //return rowTwoItems.count;
    // return rowThreeItems.count;
 //}
+    
+    
 -(NSString*)pickerView:(UIPickerView *)pickerView titleForRow:(NSInteger)row forComponent:(NSInteger)component{
     if(component == 1)
         return[rowTwoItems objectAtIndex:row];
@@ -94,8 +109,17 @@
     
 }
 
-
+//added actioin 1/29
 
 - (IBAction)findWorkout:(id)sender {
+    static NSInteger currentIndex = 0;
+    if (++currentIndex == [self.workouts count]) {
+        currentIndex=0;
+    }else{
+        workoutList *aWorkout = (workoutList *) [self.workouts objectAtIndex: currentIndex];
+        [self.workoutResults setText:aWorkout.description];
+        
+    }
 }
+
 @end

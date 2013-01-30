@@ -9,6 +9,12 @@
 #import <UIKit/UIKit.h>
 
 @interface ViewController : UIViewController <UIPickerViewDelegate,UIPickerViewDataSource>
+{
+    NSMutableArray *workouts;
+        
+}
+
+@property(nonatomic,retain) NSMutableArray *workouts;
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (strong, nonatomic )NSMutableArray *rowOneItems;
 @property (strong, nonatomic )NSMutableArray *rowTwoItems;

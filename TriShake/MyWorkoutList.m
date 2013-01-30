@@ -39,6 +39,7 @@
             //WineList *MyWine = [[WineList alloc]init];
             workoutList *MyWorkout = [[workoutList alloc]init];
             //MyWorkout.WineId = sqlite3_column_int(sqlStatement, 0);
+            
             //changed from 1 to 0 because not using int
             MyWorkout.type = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement,0)];
             //changed from 2 to 1

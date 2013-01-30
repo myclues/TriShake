@@ -18,7 +18,11 @@
                                 <constraints>
                                     <constraint firstAttribute="height" constant="178" id="rrk-xu-bdO"/>
                                 </constraints>
-                                <string key="text">Warm Up: Spin easily for 15 minutes, raising your effort for 4 hard 30 second spin-ups.MS: Ride 2 x 12 minutes at a pace that you can hold for a 30 minute all out effort. (Rest Interval: 5min)CD: Spin easily for 15 min</string>
+                                <string key="text">Warm Up: Spin easily for 15 minutes, raising your effort for 4 hard 30 second spin-ups.
+
+MS: Ride 2 x 12 minutes at a pace that you can hold for a 30 minute all out effort. (Rest Interval: 5min)
+
+CD: Spin easily for 15 min</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>

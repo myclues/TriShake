@@ -26,6 +26,7 @@
 		49300B0B16B77DF700F45D24 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49300B0A16B77DF700F45D24 /* libsqlite3.dylib */; };
 		49300B0F16B780B000F45D24 /* workoutList.m in Sources */ = {isa = PBXBuildFile; fileRef = 49300B0E16B780B000F45D24 /* workoutList.m */; };
 		49300B1216B7826300F45D24 /* MyWorkoutList.m in Sources */ = {isa = PBXBuildFile; fileRef = 49300B1116B7826300F45D24 /* MyWorkoutList.m */; };
+		49BE951816B8B9030003A972 /* workouts.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 49BE951716B8B9030003A972 /* workouts.sqlite */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +56,7 @@
 		49300B0E16B780B000F45D24 /* workoutList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = workoutList.m; path = TriShake/workoutList.m; sourceTree = "<group>"; };
 		49300B1016B7826300F45D24 /* MyWorkoutList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MyWorkoutList.h; path = TriShake/MyWorkoutList.h; sourceTree = "<group>"; };
 		49300B1116B7826300F45D24 /* MyWorkoutList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = MyWorkoutList.m; path = TriShake/MyWorkoutList.m; sourceTree = "<group>"; };
+		49BE951716B8B9030003A972 /* workouts.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = workouts.sqlite; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +82,7 @@
 				49300AD116B705A100F45D24 /* TriShake */,
 				49300ACA16B705A100F45D24 /* Frameworks */,
 				49300AC816B705A100F45D24 /* Products */,
+				49BE951716B8B9030003A972 /* workouts.sqlite */,
 			);
 			sourceTree = "<group>";
 		};
@@ -213,6 +216,7 @@
 				49300AFF16B724AD00F45D24 /* orangeButton@2x.png in Resources */,
 				49300B0016B724AD00F45D24 /* orangeButtonHighlight.png in Resources */,
 				49300B0116B724AD00F45D24 /* orangeButtonHighlight@2x.png in Resources */,
+				49BE951816B8B9030003A972 /* workouts.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -344,6 +348,7 @@
 				49300AED16B705A200F45D24 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
