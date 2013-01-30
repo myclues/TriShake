@@ -117,7 +117,7 @@
         currentIndex=0;
     }else{
         workoutList *aWorkout = (workoutList *) [self.workouts objectAtIndex: currentIndex];
-        [self.workoutResults setText:aWorkout.description];
+        [self.workoutResults setText:aWorkout.type];
         
     }
 }

@@ -18,6 +18,7 @@
     @try {
         NSFileManager *fileMgr = [NSFileManager defaultManager];
         NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"IOSDB.sqlite"];
+            NSLog(@"Db path is %@",dbPath);
         BOOL success = [fileMgr fileExistsAtPath:dbPath];
         if(!success)
         {
@@ -27,7 +28,7 @@
         {
             NSLog(@"An error has occured.");
         }
-        const char *sql = "SELECT type, difficulty, duration, description FROM  workoutData";
+        const char *sql = "SELECT Id, type, difficulty FROM workoutTbl";
         sqlite3_stmt *sqlStatement;
         if(sqlite3_prepare(db, sql, -1, &sqlStatement, NULL) != SQLITE_OK)
         {
@@ -36,18 +37,13 @@
         
         //
         while (sqlite3_step(sqlStatement)==SQLITE_ROW) {
-            //WineList *MyWine = [[WineList alloc]init];
+           
             workoutList *MyWorkout = [[workoutList alloc]init];
-            //MyWorkout.WineId = sqlite3_column_int(sqlStatement, 0);
-            
-            //changed from 1 to 0 because not using int
-            MyWorkout.type = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement,0)];
-            //changed from 2 to 1
-            MyWorkout.difficulty = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 1)];
-            //const char *raw = sqlite3_column_blob(sqlStatement, 3);
-            //int rawLen = sqlite3_column_bytes(sqlStatement, 3);
-            //NSData *data = [NSData dataWithBytes:raw length:rawLen];
-            //MyWine.photo = [[UIImage alloc] initWithData:data];
+            MyWorkout.Id = sqlite3_column_int(sqlStatement, 0);
+            MyWorkout.type = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement,1)];
+            MyWorkout.difficulty = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 2)];
+            MyWorkout.duration = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 3)];
+            MyWorkout.description = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 4)];
             [workoutArray addObject:MyWorkout];
         }
     }
