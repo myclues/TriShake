@@ -17,22 +17,29 @@
     NSMutableArray *workoutArray = [[NSMutableArray alloc] init];
     @try {
         NSFileManager *fileMgr = [NSFileManager defaultManager];
-        NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"IOSDB.sqlite"];
+        //or IOSDB.sqlite
+        NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"tsdb.sqlite"];
             NSLog(@"Db path is %@",dbPath);
         BOOL success = [fileMgr fileExistsAtPath:dbPath];
         if(!success)
         {
             NSLog(@"Cannot locate database file '%@'.", dbPath);
         }
-        if(!(sqlite3_open([dbPath UTF8String], &db) == SQLITE_OK))
+        if
+            (!(sqlite3_open([dbPath UTF8String], &db) == SQLITE_OK))
+        
         {
             NSLog(@"An error has occured.");
         }
-        const char *sql = "SELECT Id, type, difficulty FROM workoutTbl";
+        const char *sql = "SELECT Id, type, difficulty, duration, description FROM workoutTbl";
         sqlite3_stmt *sqlStatement;
+        
         if(sqlite3_prepare(db, sql, -1, &sqlStatement, NULL) != SQLITE_OK)
-        {
+
+            
+       {
             NSLog(@"Problem with prepare statement");
+          NSLog(@"%s Prepare failure '%s' (%1d)", __FUNCTION__, sqlite3_errmsg(db), sqlite3_errcode(db));
         }
         
         //
