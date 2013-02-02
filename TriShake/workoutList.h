@@ -14,9 +14,9 @@
     NSString *difficulty;
     NSString *duration;
     NSString *description;
-    NSInteger Id;
+    NSInteger workoutId;
 }
-@property (nonatomic, assign) NSInteger Id;
+@property (nonatomic, assign) NSInteger workoutId;
 @property (nonatomic, retain) NSString *type;
 @property (nonatomic, retain) NSString *difficulty;
 @property (nonatomic, retain) NSString *duration;

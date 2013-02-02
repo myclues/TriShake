@@ -10,7 +10,7 @@
 
 @implementation workoutList
 
-@synthesize Id;
+@synthesize workoutId;
 @synthesize type;
 @synthesize difficulty;
 @synthesize duration;

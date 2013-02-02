@@ -26,7 +26,7 @@
 		49300B0B16B77DF700F45D24 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49300B0A16B77DF700F45D24 /* libsqlite3.dylib */; };
 		49300B0F16B780B000F45D24 /* workoutList.m in Sources */ = {isa = PBXBuildFile; fileRef = 49300B0E16B780B000F45D24 /* workoutList.m */; };
 		49300B1216B7826300F45D24 /* MyWorkoutList.m in Sources */ = {isa = PBXBuildFile; fileRef = 49300B1116B7826300F45D24 /* MyWorkoutList.m */; };
-		4937F52316BB64200025D5C8 /* tsdb.sql in Resources */ = {isa = PBXBuildFile; fileRef = 4937F52216BB64200025D5C8 /* tsdb.sql */; };
+		498915AD16BDA18200DCDAD9 /* TRIDB.db3 in Resources */ = {isa = PBXBuildFile; fileRef = 498915AC16BDA18200DCDAD9 /* TRIDB.db3 */; };
 		49BE951D16B9A4170003A972 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BE951C16B9A4170003A972 /* libsqlite3.0.dylib */; };
 		49E2F7C616BCAE5A0074E639 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E2F7C516BCAE5A0074E639 /* Default.png */; };
 		49E2F7C916BCAE640074E639 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E2F7C816BCAE640074E639 /* default@2x.png */; };
@@ -61,10 +61,10 @@
 		49300B0E16B780B000F45D24 /* workoutList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = workoutList.m; sourceTree = "<group>"; };
 		49300B1016B7826300F45D24 /* MyWorkoutList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWorkoutList.h; sourceTree = "<group>"; };
 		49300B1116B7826300F45D24 /* MyWorkoutList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWorkoutList.m; sourceTree = "<group>"; };
-		4937F52216BB64200025D5C8 /* tsdb.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tsdb.sql; sourceTree = "<group>"; };
+		498915AC16BDA18200DCDAD9 /* TRIDB.db3 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; name = TRIDB.db3; path = ../../TRIDB.db3; sourceTree = "<group>"; };
 		49BE951C16B9A4170003A972 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
-		49E2F7C516BCAE5A0074E639 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
-		49E2F7C816BCAE640074E639 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
+		49E2F7C516BCAE5A0074E639 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Default.png; sourceTree = "<group>"; };
+		49E2F7C816BCAE640074E639 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default@2x.png"; path = "../../default@2x.png"; sourceTree = "<group>"; };
 		49E2F7CA16BCAFFC0074E639 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
 		49E2F7CC16BCB0040074E639 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -88,10 +88,9 @@
 		49300ABC16B705A100F45D24 = {
 			isa = PBXGroup;
 			children = (
+				498915AC16BDA18200DCDAD9 /* TRIDB.db3 */,
 				49E2F7CC16BCB0040074E639 /* default@2x.png */,
 				49E2F7CA16BCAFFC0074E639 /* Default.png */,
-				49E2F7C816BCAE640074E639 /* default@2x.png */,
-				49E2F7C516BCAE5A0074E639 /* Default.png */,
 				49300AD116B705A100F45D24 /* TriShake */,
 				49300ACA16B705A100F45D24 /* Frameworks */,
 				49300AC816B705A100F45D24 /* Products */,
@@ -127,7 +126,6 @@
 				49300B0E16B780B000F45D24 /* workoutList.m */,
 				49300B1016B7826300F45D24 /* MyWorkoutList.h */,
 				49300B1116B7826300F45D24 /* MyWorkoutList.m */,
-				4937F52216BB64200025D5C8 /* tsdb.sql */,
 				49300ADB16B705A100F45D24 /* AppDelegate.m */,
 				49300AE316B705A200F45D24 /* MainStoryboard.storyboard */,
 				49300AE616B705A200F45D24 /* ViewController.h */,
@@ -154,6 +152,8 @@
 		49300AF716B724AD00F45D24 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				49E2F7C816BCAE640074E639 /* default@2x.png */,
+				49E2F7C516BCAE5A0074E639 /* Default.png */,
 				49300AF816B724AD00F45D24 /* orangebutton.ai */,
 				49300AF916B724AD00F45D24 /* OrangeButton.png */,
 				49300AFA16B724AD00F45D24 /* orangeButton@2x.png */,
@@ -224,11 +224,11 @@
 				49300AFF16B724AD00F45D24 /* orangeButton@2x.png in Resources */,
 				49300B0016B724AD00F45D24 /* orangeButtonHighlight.png in Resources */,
 				49300B0116B724AD00F45D24 /* orangeButtonHighlight@2x.png in Resources */,
-				4937F52316BB64200025D5C8 /* tsdb.sql in Resources */,
 				49E2F7C616BCAE5A0074E639 /* Default.png in Resources */,
 				49E2F7C916BCAE640074E639 /* default@2x.png in Resources */,
 				49E2F7CB16BCAFFC0074E639 /* Default.png in Resources */,
 				49E2F7CD16BCB0040074E639 /* default@2x.png in Resources */,
+				498915AD16BDA18200DCDAD9 /* TRIDB.db3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

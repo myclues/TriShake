@@ -29,6 +29,13 @@
     //blahhhhh this line isn't working
     //[self.workoutResults setText:((workoutList *) [self.workouts objectAtIndex:0]).description];
     
+    //shrink picker view
+    pickerView.transform = CGAffineTransformMakeScale(.8, 0.8);
+    
+    //tried this as well, but this ain't workin right
+   // pickerView.frame = CGRectMake(0, 0, 120, 80);
+  
+    
     //set up arrays
     
     [super viewDidLoad];
@@ -81,16 +88,41 @@
         return [rowOneItems objectAtIndex:row];
 }
 
+
+
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
 	   inComponent:(NSInteger)component {
-    NSLog(@"Selected Leg: %@",[rowOneItems objectAtIndex:row]);
-    NSLog(@"Selected Difficulty: %@",[rowTwoItems objectAtIndex:row]);
-    NSLog(@"Selected Time: %@",[rowThreeItems objectAtIndex:row]);
     
+    //log which row is selected in each component
+    if(component ==1) {
+    return NSLog(@"Selected Difficulty: %@",[rowTwoItems objectAtIndex:row]);
+    }
+    else if(component ==2) {
+    return NSLog(@"Selected Duration: %@",[rowThreeItems objectAtIndex:row]);
+    }
+    else{
+        NSLog(@"Selected Type: %@",[rowOneItems objectAtIndex:row]);
+    }
     
+  //define chosen items
+    NSString *chosenType;// = [rowOneItems objectAtIndex:row];
+    NSString *chosenDifficulty;// = [rowTwoItems objectAtIndex:row];
+    NSString *chosenDuration;// = [rowThreeItems objectAtIndex:row];
+
     
-    NSString *chosenCombo = [[NSString alloc] initWithFormat:@"Selected Leg: %@ Selected Difficulty: %@ Selected Time: %@", rowOneItems, rowTwoItems, rowTwoItems];
-    self.workoutResults.text = chosenCombo;
+    if (component ==0) {
+         chosenDifficulty = ([rowTwoItems objectAtIndex:row]);
+    }
+    if(component ==0) {
+        chosenDuration = ([rowThreeItems objectAtIndex:row]);
+    }
+    if (component ==0) {
+        chosenType = ([rowOneItems objectAtIndex:row]);
+    }
+   
+    NSString *chosenValues = [NSString stringWithFormat:@"%@, %@, %@", chosenType, chosenDifficulty, chosenDuration];
+    
+    self.workoutResults.text = chosenValues;
     
     //ViewController *initialView;
   //  initialView=(ViewController *)self.delegate;
@@ -112,6 +144,8 @@
 //added actioin 1/29
 
 - (IBAction)findWorkout:(id)sender {
+
+    
     static NSInteger currentIndex = 0;
     if (++currentIndex == [self.workouts count]) {
         currentIndex=0;
