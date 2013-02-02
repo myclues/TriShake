@@ -28,6 +28,10 @@
 		49300B1216B7826300F45D24 /* MyWorkoutList.m in Sources */ = {isa = PBXBuildFile; fileRef = 49300B1116B7826300F45D24 /* MyWorkoutList.m */; };
 		4937F52316BB64200025D5C8 /* tsdb.sql in Resources */ = {isa = PBXBuildFile; fileRef = 4937F52216BB64200025D5C8 /* tsdb.sql */; };
 		49BE951D16B9A4170003A972 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BE951C16B9A4170003A972 /* libsqlite3.0.dylib */; };
+		49E2F7C616BCAE5A0074E639 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E2F7C516BCAE5A0074E639 /* Default.png */; };
+		49E2F7C916BCAE640074E639 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E2F7C816BCAE640074E639 /* default@2x.png */; };
+		49E2F7CB16BCAFFC0074E639 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E2F7CA16BCAFFC0074E639 /* Default.png */; };
+		49E2F7CD16BCB0040074E639 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E2F7CC16BCB0040074E639 /* default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +63,10 @@
 		49300B1116B7826300F45D24 /* MyWorkoutList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWorkoutList.m; sourceTree = "<group>"; };
 		4937F52216BB64200025D5C8 /* tsdb.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = tsdb.sql; sourceTree = "<group>"; };
 		49BE951C16B9A4170003A972 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
+		49E2F7C516BCAE5A0074E639 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		49E2F7C816BCAE640074E639 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
+		49E2F7CA16BCAFFC0074E639 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Default.png; sourceTree = "<group>"; };
+		49E2F7CC16BCB0040074E639 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "default@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +88,10 @@
 		49300ABC16B705A100F45D24 = {
 			isa = PBXGroup;
 			children = (
+				49E2F7CC16BCB0040074E639 /* default@2x.png */,
+				49E2F7CA16BCAFFC0074E639 /* Default.png */,
+				49E2F7C816BCAE640074E639 /* default@2x.png */,
+				49E2F7C516BCAE5A0074E639 /* Default.png */,
 				49300AD116B705A100F45D24 /* TriShake */,
 				49300ACA16B705A100F45D24 /* Frameworks */,
 				49300AC816B705A100F45D24 /* Products */,
@@ -213,6 +225,10 @@
 				49300B0016B724AD00F45D24 /* orangeButtonHighlight.png in Resources */,
 				49300B0116B724AD00F45D24 /* orangeButtonHighlight@2x.png in Resources */,
 				4937F52316BB64200025D5C8 /* tsdb.sql in Resources */,
+				49E2F7C616BCAE5A0074E639 /* Default.png in Resources */,
+				49E2F7C916BCAE640074E639 /* default@2x.png in Resources */,
+				49E2F7CB16BCAFFC0074E639 /* Default.png in Resources */,
+				49E2F7CD16BCB0040074E639 /* default@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
