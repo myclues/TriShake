@@ -19,8 +19,10 @@
 @property (strong, nonatomic )NSMutableArray *rowOneItems;
 @property (strong, nonatomic )NSMutableArray *rowTwoItems;
 @property (strong, nonatomic )NSMutableArray *rowThreeItems;
-//@property (strong, nonatomic) IBOutlet UITextView *workoutResults;
-@property (strong, nonatomic) IBOutlet UILabel *workoutResults;
+@property (strong, nonatomic) IBOutlet UILabel *workoutTypeLabel;
+@property (strong, nonatomic) IBOutlet UILabel *workoutDifficultyLabel;
+@property (strong, nonatomic) IBOutlet UILabel *workoutDurationLabel;
+
 
 - (IBAction)findWorkout:(id)sender;
 

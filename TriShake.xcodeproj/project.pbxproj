@@ -30,8 +30,6 @@
 		49BE951D16B9A4170003A972 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BE951C16B9A4170003A972 /* libsqlite3.0.dylib */; };
 		49E2F7C616BCAE5A0074E639 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E2F7C516BCAE5A0074E639 /* Default.png */; };
 		49E2F7C916BCAE640074E639 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E2F7C816BCAE640074E639 /* default@2x.png */; };
-		49E2F7CB16BCAFFC0074E639 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E2F7CA16BCAFFC0074E639 /* Default.png */; };
-		49E2F7CD16BCB0040074E639 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E2F7CC16BCB0040074E639 /* default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -189,7 +187,7 @@
 		49300ABE16B705A100F45D24 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0450;
+				LastUpgradeCheck = 0460;
 				ORGANIZATIONNAME = "Corinn Pope";
 			};
 			buildConfigurationList = 49300AC116B705A100F45D24 /* Build configuration list for PBXProject "TriShake" */;
@@ -226,8 +224,6 @@
 				49300B0116B724AD00F45D24 /* orangeButtonHighlight@2x.png in Resources */,
 				49E2F7C616BCAE5A0074E639 /* Default.png in Resources */,
 				49E2F7C916BCAE640074E639 /* default@2x.png in Resources */,
-				49E2F7CB16BCAFFC0074E639 /* Default.png in Resources */,
-				49E2F7CD16BCB0040074E639 /* default@2x.png in Resources */,
 				498915AD16BDA18200DCDAD9 /* TRIDB.db3 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

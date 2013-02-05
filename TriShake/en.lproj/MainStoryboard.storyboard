@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="2844" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="2.0" toolsVersion="3084" systemVersion="12C60" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" initialViewController="2">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="1930"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="2083"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -33,9 +33,26 @@
                                     <action selector="findWorkout:" destination="2" eventType="touchUpInside" id="qdZ-pb-fpV"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" lineBreakMode="tailTruncation" numberOfLines="9" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="280" translatesAutoresizingMaskIntoConstraints="NO" id="qyq-zb-tMf">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Type" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qyq-zb-tMf">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="226" id="LBZ-qE-Nwh"/>
+                                    <constraint firstAttribute="height" constant="25" type="user" id="376-t6-MGc"/>
+                                    <constraint firstAttribute="width" constant="60" id="v5W-gM-1o7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Difficulty" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xjO-Z3-sTb">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="91" id="RcH-lm-coT"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Duration" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1xz-fb-kpi">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="rr0-gi-Rel"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -45,20 +62,27 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="k5Q-Qj-DDp" firstAttribute="leading" secondItem="3" secondAttribute="leading" type="default" id="18C-zV-qvn"/>
+                            <constraint firstItem="1xz-fb-kpi" firstAttribute="leading" secondItem="xjO-Z3-sTb" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="5ug-3g-GS9"/>
+                            <constraint firstItem="xjO-Z3-sTb" firstAttribute="baseline" secondItem="qyq-zb-tMf" secondAttribute="baseline" type="default" id="8T5-5f-fzd"/>
                             <constraint firstItem="4ra-U7-vTG" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="3" secondAttribute="leading" constant="20" type="user" id="8Xb-fu-jLj"/>
                             <constraint firstItem="qyq-zb-tMf" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="BXy-s4-nwd"/>
-                            <constraint firstItem="k5Q-Qj-DDp" firstAttribute="top" secondItem="3" secondAttribute="top" type="user" id="I9V-ad-x6h"/>
+                            <constraint firstItem="1xz-fb-kpi" firstAttribute="baseline" secondItem="xjO-Z3-sTb" secondAttribute="baseline" type="default" id="CrW-Ym-9MU"/>
+                            <constraint firstItem="xjO-Z3-sTb" firstAttribute="top" secondItem="qyq-zb-tMf" secondAttribute="top" type="default" id="IJe-7M-Apz"/>
                             <constraint firstItem="4ra-U7-vTG" firstAttribute="leading" secondItem="3" secondAttribute="leading" constant="20" symbolic="YES" type="user" id="JyU-gU-Ok2"/>
-                            <constraint firstItem="4ra-U7-vTG" firstAttribute="top" secondItem="k5Q-Qj-DDp" secondAttribute="bottom" constant="8" symbolic="YES" type="user" id="NBC-zN-zr6"/>
-                            <constraint firstAttribute="trailing" secondItem="qyq-zb-tMf" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="TcS-A6-aQD"/>
+                            <constraint firstItem="xjO-Z3-sTb" firstAttribute="top" secondItem="3" secondAttribute="top" constant="261" id="Olh-HS-D2m"/>
                             <constraint firstItem="k5Q-Qj-DDp" firstAttribute="trailing" secondItem="3" secondAttribute="trailing" type="default" id="Uj4-GG-QMC"/>
-                            <constraint firstAttribute="bottom" secondItem="qyq-zb-tMf" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="ZCG-Em-yVP"/>
+                            <constraint firstItem="4ra-U7-vTG" firstAttribute="top" secondItem="3" secondAttribute="top" constant="203" id="XOi-ee-ngz"/>
+                            <constraint firstAttribute="trailing" secondItem="1xz-fb-kpi" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="aP0-z8-t9U"/>
                             <constraint firstAttribute="trailing" secondItem="4ra-U7-vTG" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="cab-Ib-vMh"/>
+                            <constraint firstItem="k5Q-Qj-DDp" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="fSo-62-Hpj"/>
+                            <constraint firstItem="1xz-fb-kpi" firstAttribute="top" secondItem="xjO-Z3-sTb" secondAttribute="top" type="default" id="o4Q-9N-kWs"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="pickerView" destination="k5Q-Qj-DDp" id="27B-i6-Wcw"/>
-                        <outlet property="workoutResults" destination="qyq-zb-tMf" id="eSo-Hv-cFi"/>
+                        <outlet property="workoutDifficultyLabel" destination="xjO-Z3-sTb" id="h1d-Nn-zDY"/>
+                        <outlet property="workoutDurationLabel" destination="1xz-fb-kpi" id="IVZ-ju-rGa"/>
+                        <outlet property="workoutTypeLabel" destination="qyq-zb-tMf" id="ft4-tA-kPx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4" sceneMemberID="firstResponder"/>
@@ -77,7 +101,9 @@
             <relationships>
                 <relationship kind="action" name="findWorkout:"/>
                 <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="workoutResults" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="workoutDifficultyLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="workoutDurationLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="workoutTypeLabel" candidateClass="UILabel"/>
             </relationships>
         </class>
     </classes>
