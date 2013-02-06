@@ -22,6 +22,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *workoutTypeLabel;
 @property (strong, nonatomic) IBOutlet UILabel *workoutDifficultyLabel;
 @property (strong, nonatomic) IBOutlet UILabel *workoutDurationLabel;
+@property (strong, nonatomic) IBOutlet UILabel *workoutDescriptionLabel;
 
 
 - (IBAction)findWorkout:(id)sender;

@@ -23,7 +23,7 @@
             
         NSFileManager *fileMgr = [NSFileManager defaultManager];
         
-        NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"TRIDB.db3"];
+        NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"test.sqlite"];
         
         
             NSLog(@"Db path is %@",dbPath);

@@ -27,6 +27,7 @@
 @synthesize workouts;
 @synthesize workoutDurationLabel;
 @synthesize workoutDifficultyLabel;
+@synthesize workoutDescriptionLabel;
 
 - (void)viewDidLoad
 {
@@ -56,8 +57,10 @@
 - (void)viewDidUnload
 {
     [self setPickerView:nil];
-        //[self setWorkoutResults:nil];
-        [super viewDidUnload];
+    [self setWorkoutTypeLabel:nil];
+    [self setWorkoutDifficultyLabel:nil];
+    [self setWorkoutDurationLabel:nil];
+    [super viewDidUnload];
     }
     
 
@@ -119,12 +122,12 @@
     self.workoutDurationLabel.text = [rowThreeItems objectAtIndex:rowThree];
     
     
-   // static NSInteger currentIndex = 0;
-    //if (++currentIndex == [self.workouts count]) {
-      //  currentIndex=0;
-    //}else{
-      //  workoutList *aWorkout = (workoutList *) [self.workouts objectAtIndex: currentIndex];
-        //[self.workoutResults setText:aWorkout.type];
+    //static NSInteger currentIndex = 0;
+   // if (++currentIndex == [self.workouts count]) {
+    ///    currentIndex=0;
+   // }else{
+    //    workoutList *aWorkout = (workoutList *) [self.workouts objectAtIndex: currentIndex];
+      //  [self.workoutDescriptionLabel setText:aWorkout.type];
         
     //}
 }

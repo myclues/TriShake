@@ -1,0 +1,2 @@
+CREATE TABLE workoutTbl (workoutId INTEGER PRIMARY KEY, type VARCHAR, difficulty VARCHAR, duration VARCHAR, description VARCHAR);
+INSERT INTO "workoutTbl" VALUES(1,'bike','easy','30-60','spin easy for 45 minutes');
