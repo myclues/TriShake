@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4926C06216C43A57005FBF58 /* workoutList.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 4926C06116C43A57005FBF58 /* workoutList.sqlite */; };
 		49300ACC16B705A100F45D24 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49300ACB16B705A100F45D24 /* UIKit.framework */; };
 		49300ACE16B705A100F45D24 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49300ACD16B705A100F45D24 /* Foundation.framework */; };
 		49300AD016B705A100F45D24 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49300ACF16B705A100F45D24 /* CoreGraphics.framework */; };
@@ -25,13 +26,13 @@
 		49300B0116B724AD00F45D24 /* orangeButtonHighlight@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49300AFC16B724AD00F45D24 /* orangeButtonHighlight@2x.png */; };
 		49300B0F16B780B000F45D24 /* workoutList.m in Sources */ = {isa = PBXBuildFile; fileRef = 49300B0E16B780B000F45D24 /* workoutList.m */; };
 		49300B1216B7826300F45D24 /* MyWorkoutList.m in Sources */ = {isa = PBXBuildFile; fileRef = 49300B1116B7826300F45D24 /* MyWorkoutList.m */; };
-		49AED11516C3725000279BE2 /* test.sql in Resources */ = {isa = PBXBuildFile; fileRef = 49AED11416C3725000279BE2 /* test.sql */; };
 		49BE951D16B9A4170003A972 /* libsqlite3.0.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 49BE951C16B9A4170003A972 /* libsqlite3.0.dylib */; };
 		49E2F7C616BCAE5A0074E639 /* Default.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E2F7C516BCAE5A0074E639 /* Default.png */; };
 		49E2F7C916BCAE640074E639 /* default@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 49E2F7C816BCAE640074E639 /* default@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4926C06116C43A57005FBF58 /* workoutList.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = workoutList.sqlite; sourceTree = "<group>"; };
 		49300AC716B705A100F45D24 /* TriShake.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TriShake.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		49300ACB16B705A100F45D24 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		49300ACD16B705A100F45D24 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -58,7 +59,6 @@
 		49300B0E16B780B000F45D24 /* workoutList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = workoutList.m; sourceTree = "<group>"; };
 		49300B1016B7826300F45D24 /* MyWorkoutList.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MyWorkoutList.h; sourceTree = "<group>"; };
 		49300B1116B7826300F45D24 /* MyWorkoutList.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MyWorkoutList.m; sourceTree = "<group>"; };
-		49AED11416C3725000279BE2 /* test.sql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = test.sql; sourceTree = "<group>"; };
 		49BE951C16B9A4170003A972 /* libsqlite3.0.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.0.dylib; path = usr/lib/libsqlite3.0.dylib; sourceTree = SDKROOT; };
 		49E2F7C516BCAE5A0074E639 /* Default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Default.png; path = ../../Default.png; sourceTree = "<group>"; };
 		49E2F7C816BCAE640074E639 /* default@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "default@2x.png"; path = "../../default@2x.png"; sourceTree = "<group>"; };
@@ -85,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				49E2F7CC16BCB0040074E639 /* default@2x.png */,
-				49AED11416C3725000279BE2 /* test.sql */,
 				49E2F7CA16BCAFFC0074E639 /* Default.png */,
 				49300AD116B705A100F45D24 /* TriShake */,
 				49300ACA16B705A100F45D24 /* Frameworks */,
@@ -121,6 +120,7 @@
 				49300B0D16B780B000F45D24 /* workoutList.h */,
 				49300B0E16B780B000F45D24 /* workoutList.m */,
 				49300B1016B7826300F45D24 /* MyWorkoutList.h */,
+				4926C06116C43A57005FBF58 /* workoutList.sqlite */,
 				49300B1116B7826300F45D24 /* MyWorkoutList.m */,
 				49300ADB16B705A100F45D24 /* AppDelegate.m */,
 				49300AE316B705A200F45D24 /* MainStoryboard.storyboard */,
@@ -222,7 +222,7 @@
 				49300B0116B724AD00F45D24 /* orangeButtonHighlight@2x.png in Resources */,
 				49E2F7C616BCAE5A0074E639 /* Default.png in Resources */,
 				49E2F7C916BCAE640074E639 /* default@2x.png in Resources */,
-				49AED11516C3725000279BE2 /* test.sql in Resources */,
+				4926C06216C43A57005FBF58 /* workoutList.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

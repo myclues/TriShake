@@ -20,8 +20,7 @@
     NSMutableArray *workoutArray = [[NSMutableArray alloc] init];
     @try {
         NSFileManager *fileMgr = [NSFileManager defaultManager];
-       NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"test.sql"];
-       // NSString *dbPath = [[NSBundle mainBundle] pathForResource:(@"test") ofType:(@"sql")];
+       NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"workoutList.sqlite"];
         
         NSLog(@"Db path is %@",dbPath);
         BOOL success = [fileMgr fileExistsAtPath:dbPath];        
@@ -30,16 +29,12 @@
         }
         
         if
-            (!(sqlite3_open([dbPath UTF8String], &db) == SQLITE_OK))
-            NSLog(@"error with message '%s'.", sqlite3_errmsg(db));
-
-        const char *sql = "SELECT workoutId, type, difficulty, duration, description FROM workoutTbl";
+        (!(sqlite3_open([dbPath UTF8String], &db) == SQLITE_OK))
+        NSLog(@"error with message '%s'.", sqlite3_errmsg(db));
+        const char *sql = "SELECT workoutId, type, difficulty, duration, description FROM main.workoutTbl";
         sqlite3_stmt *sqlStatement;
 
-
-        
         if (sqlite3_prepare(db, sql, -1, &sqlStatement, NULL) != SQLITE_OK) {
-            //(sqlite3_prepare_v2(db, sql, -1, &sqlStatement, NULL) == SQLITE_OK)      {
         NSLog(@"%s Prepare failure '%s' (%1d)", __FUNCTION__, sqlite3_errmsg(db), sqlite3_errcode(db));
         }
         
@@ -60,6 +55,8 @@
     }
     @finally {
         return workoutArray;
+
+        
     }
     
     

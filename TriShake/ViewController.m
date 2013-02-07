@@ -34,9 +34,7 @@
     
     MyWorkoutList * myworkouts =[[MyWorkoutList alloc] init];
     self.workouts = [myworkouts getMyWorkout];
-    //blahhhhh this line isn't working
-    //[self.workoutResults setText:((workoutList *) [self.workouts objectAtIndex:0]).description];
-    
+
     //shrink picker view
     pickerView.transform = CGAffineTransformMakeScale(.8, 0.8);
     
@@ -107,11 +105,8 @@
     }
 }
 
-
-//added actioin 1/29
-
 - (IBAction)findWorkout:(id)sender {
-
+    //set labels to show what the user picked
     NSInteger rowOne = [pickerView selectedRowInComponent:kTypeComponent];
     self.workoutTypeLabel.text = [rowOneItems objectAtIndex:rowOne];
     
@@ -121,15 +116,18 @@
     NSInteger rowThree = [pickerView selectedRowInComponent:kDurationComponent];
     self.workoutDurationLabel.text = [rowThreeItems objectAtIndex:rowThree];
     
+    NSMutableArray *workoutArray;
+    self.workoutDescriptionLabel.text = [workoutArray componentsJoinedByString:@" "];
     
-    //static NSInteger currentIndex = 0;
-   // if (++currentIndex == [self.workouts count]) {
-    ///    currentIndex=0;
-   // }else{
-    //    workoutList *aWorkout = (workoutList *) [self.workouts objectAtIndex: currentIndex];
-      //  [self.workoutDescriptionLabel setText:aWorkout.type];
-        
-    //}
+    //show description- test for now (2/7)
+//    static NSInteger currentIndex = 0;
+//    if (++currentIndex == [self.workouts count]) {
+//       currentIndex=0;
+//    }else{
+       workoutList *aWorkout = (workoutList *) [self.workouts objectAtIndex:rowOne];
+       [self.workoutDescriptionLabel setText:aWorkout.description];
+
+//    }
 }
 
 @end
