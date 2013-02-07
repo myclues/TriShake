@@ -15,45 +15,31 @@
 @implementation MyWorkoutList
 
 - (NSMutableArray *) getMyWorkout{
-
+    //sqlite3 *db;
     
     NSMutableArray *workoutArray = [[NSMutableArray alloc] init];
     @try {
-        //define path
-            
         NSFileManager *fileMgr = [NSFileManager defaultManager];
+       NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"test.sql"];
+       // NSString *dbPath = [[NSBundle mainBundle] pathForResource:(@"test") ofType:(@"sql")];
         
-        NSString *dbPath = [[[NSBundle mainBundle] resourcePath ]stringByAppendingPathComponent:@"test.sqlite"];
-        
-        
-            NSLog(@"Db path is %@",dbPath);
-        BOOL success = [fileMgr fileExistsAtPath:dbPath];
-       // [fileMgr copyItemAtPath:dbPath toPath:self.databasePath error:nil];
-        if(!success)
-       {
-            
+        NSLog(@"Db path is %@",dbPath);
+        BOOL success = [fileMgr fileExistsAtPath:dbPath];        
+        if(!success){
           NSLog(@"Cannot locate database file '%@'.", dbPath);
         }
         
         if
-            //(!(sqlite3_open_v2(dbPath, sql, -1, &sqlStatement, SQLITE_OPEN_READONLY)))
-           (!(sqlite3_open([dbPath UTF8String], &db) == SQLITE_OK))
+            (!(sqlite3_open([dbPath UTF8String], &db) == SQLITE_OK))
             NSLog(@"error with message '%s'.", sqlite3_errmsg(db));
-        
-        //{
-            
-         // sqlite3_close(db);
-        //NSLog(@"Failed to open database with message '%s'.", sqlite3_errmsg(db));
-       // }
-        
+
         const char *sql = "SELECT workoutId, type, difficulty, duration, description FROM workoutTbl";
         sqlite3_stmt *sqlStatement;
-        
-        if(sqlite3_prepare(db, sql, -1, &sqlStatement, NULL) != SQLITE_OK) NSLog(@"connect to table OK");
-            else NSLog(@"connect to table FALSE");
 
-            
-       {
+
+        
+        if (sqlite3_prepare(db, sql, -1, &sqlStatement, NULL) != SQLITE_OK) {
+            //(sqlite3_prepare_v2(db, sql, -1, &sqlStatement, NULL) == SQLITE_OK)      {
         NSLog(@"%s Prepare failure '%s' (%1d)", __FUNCTION__, sqlite3_errmsg(db), sqlite3_errcode(db));
         }
         
