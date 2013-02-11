@@ -116,15 +116,11 @@
     NSInteger rowThree = [pickerView selectedRowInComponent:kDurationComponent];
     self.workoutDurationLabel.text = [rowThreeItems objectAtIndex:rowThree];
     
-    NSMutableArray *workoutArray;
-    self.workoutDescriptionLabel.text = [workoutArray componentsJoinedByString:@" "];
+   // NSMutableArray *workoutArray;
+    //self.workoutDescriptionLabel.text = [workoutArray componentsJoinedByString:@" "];
     
     //show description- test for now (2/7)
-//    static NSInteger currentIndex = 0;
-//    if (++currentIndex == [self.workouts count]) {
-//       currentIndex=0;
-//    }else{
-       workoutList *aWorkout = (workoutList *) [self.workouts objectAtIndex:rowOne];
+       workoutList *aWorkout = (workoutList *) [self.workouts objectAtIndex:rowTwo];
        [self.workoutDescriptionLabel setText:aWorkout.description];
 
 //    }
