@@ -48,9 +48,13 @@
         
         //thinking out loud
         //component one (kTypeComponent)- row one is equal to bike, row two is equal to run, row three is equal to swim
-        
         //type is equal to the selected row from the first component (kTypeComponent)
-        //NSInteger getDescriptionFromType = [pickerView selectedRowInComponent:kTypeComponent];
+        
+        //possibly??? this may have to go in another class
+        //NSInteger getTypeSelected = [pickerView selectedRowInComponent:kTypeComponent];
+        //NSString typeSQL = [rowOneItems objectAtIndex:getTypeSelected];
+        
+        //)type = typeSQL)
                 //AND
         
         //component two (kDifficultyComponent)- row one is equal to easy, row two is equal to medium, row three is equal to hard
