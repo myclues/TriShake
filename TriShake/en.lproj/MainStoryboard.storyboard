@@ -104,22 +104,6 @@
     <resources>
         <image name="OrangeButton.png" width="280" height="44"/>
     </resources>
-    <classes>
-        <class className="NSLayoutConstraint" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
-        </class>
-        <class className="ViewController" superclassName="UIViewController">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/ViewController.h"/>
-            <relationships>
-                <relationship kind="action" name="findWorkout:"/>
-                <relationship kind="outlet" name="pickerView" candidateClass="UIPickerView"/>
-                <relationship kind="outlet" name="workoutDescriptionLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="workoutDifficultyLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="workoutDurationLabel" candidateClass="UILabel"/>
-                <relationship kind="outlet" name="workoutTypeLabel" candidateClass="UILabel"/>
-            </relationships>
-        </class>
-    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>

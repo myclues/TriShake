@@ -119,6 +119,21 @@
    // NSMutableArray *workoutArray;
     //self.workoutDescriptionLabel.text = [workoutArray componentsJoinedByString:@" "];
     
+            sqlite3_stmt *pickerStatement;
+    
+            NSInteger getTypeSelected = [pickerView selectedRowInComponent:kTypeComponent];
+            NSString *typeSQL = [rowOneItems objectAtIndex:getTypeSelected];
+    
+            NSInteger getDifficultySelected = [pickerView selectedRowInComponent:kDifficultyComponent];
+            NSString *difficultySQL = [rowTwoItems objectAtIndex:getDifficultySelected];
+    
+            NSInteger getDurationSelected = [pickerView selectedRowInComponent:kDifficultyComponent];
+            NSString *durationSQL = [rowTwoItems objectAtIndex:getDurationSelected];
+    
+            NSString *createSQL = [NSString stringWithFormat: @"SELECT description FROM workoutTbl WHERE type LIKE '%%%@%%' AND difficulty LIKE '%%%@%%' AND duration LIKE '%%%@%%'", typeSQL, difficultySQL, durationSQL];
+    
+    
+    
     //show description- test for now (2/7)
        workoutList *aWorkout = (workoutList *) [self.workouts objectAtIndex:rowTwo];
        [self.workoutDescriptionLabel setText:aWorkout.description];

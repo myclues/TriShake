@@ -36,34 +36,23 @@
         //main.workoutTbl and workoutTbl both work
         const char *sql = "SELECT workoutId, type, difficulty, duration, description FROM workoutTbl";
         sqlite3_stmt *sqlStatement;
-
         
-        ////////////////////////////////////////////////////////////////////
-        //I feel like I have to put my UIPickerView Specific SQL statement here????
         //sqlite3_stmt *pickerStatement;
-        //const char *pickerSQL = "
         
-        //SELECT description
-        //FROM workoutTbl WHERE
         
-        //thinking out loud
-        //component one (kTypeComponent)- row one is equal to bike, row two is equal to run, row three is equal to swim
-        //type is equal to the selected row from the first component (kTypeComponent)
+        ////////////////////////////////////////////////////////////////////   
+//        NSInteger getTypeSelected = [UIPickerView selectedRowInComponent:kTypeComponent];
+//        NSString typeSQL = [rowOneItems objectAtIndex:getTypeSelected];
+//        
+//        NSInteger getDifficultySelected = [UIPickerView selectedRowInComponent:kDifficultyComponent];
+//        NSString difficultySQL = [rowTwoItems objectAtIndex:getDifficultySelected];
+//
+//        NSInteger *getDifficultySelected = [UIPickerView selectedRowInComponent:kDifficultyComponent];
+//        NSString *durationSQL = [rowTwoItems objectAtIndex:getDurationSelected];
+//        
+//        NSString *createSQL = [NSString stringWithFormat: @"SELECT description FROM workoutTbl WHERE type LIKE '%%%@%%' AND difficulty LIKE '%%%@%%' AND duration LIKE '%%%@%%'", typeSQL, difficultySQL, durationSQL];
         
-        //possibly??? this may have to go in another class
-        //NSInteger getTypeSelected = [pickerView selectedRowInComponent:kTypeComponent];
-        //NSString typeSQL = [rowOneItems objectAtIndex:getTypeSelected];
-        
-        //)type = typeSQL)
-                //AND
-        
-        //component two (kDifficultyComponent)- row one is equal to easy, row two is equal to medium, row three is equal to hard
-        ////NSInteger getDescriptionFromDifficulty = [pickerView selectedRowInComponent:kDifficultyComponent];
-                //AND
-        
-        //component three (kDurationComponent)- row one is equal to <30 minutes, row two is 30-60 minutes, row three is >60 minutes
-        // NSInteger getDescriptionFromDuration = [pickerView selectedRowInComponent:kDurationComponent];
-        //";
+
         ////////////////////////////////////////////////////////////////////
         
         if (sqlite3_prepare(db, sql, -1, &sqlStatement, NULL) != SQLITE_OK) {
