@@ -27,4 +27,6 @@
 
 - (IBAction)findWorkout:(id)sender;
 
+- (void)setSQLStatement;
+
 @end

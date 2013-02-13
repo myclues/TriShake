@@ -10,6 +10,7 @@
 #import "workoutList.h"
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+#import "ViewController.h"
 
 
 @implementation MyWorkoutList
@@ -31,28 +32,20 @@
         if
         (!(sqlite3_open([dbPath UTF8String], &db) == SQLITE_OK))
         NSLog(@"error with message '%s'.", sqlite3_errmsg(db));
-        
-        
-        //main.workoutTbl and workoutTbl both work
+
         const char *sql = "SELECT workoutId, type, difficulty, duration, description FROM workoutTbl";
         sqlite3_stmt *sqlStatement;
-        
+        ///////////////////////////////////
+        //SQL statement for Picker View////
+        //////////////////////////////////
         //sqlite3_stmt *pickerStatement;
-        
-        
-        ////////////////////////////////////////////////////////////////////   
-//        NSInteger getTypeSelected = [UIPickerView selectedRowInComponent:kTypeComponent];
-//        NSString typeSQL = [rowOneItems objectAtIndex:getTypeSelected];
-//        
-//        NSInteger getDifficultySelected = [UIPickerView selectedRowInComponent:kDifficultyComponent];
-//        NSString difficultySQL = [rowTwoItems objectAtIndex:getDifficultySelected];
-//
-//        NSInteger *getDifficultySelected = [UIPickerView selectedRowInComponent:kDifficultyComponent];
-//        NSString *durationSQL = [rowTwoItems objectAtIndex:getDurationSelected];
+//        NSString *typeSQL;
+//        NSString *difficultySQL;
+//        NSString *durationSQL;
+
 //        
 //        NSString *createSQL = [NSString stringWithFormat: @"SELECT description FROM workoutTbl WHERE type LIKE '%%%@%%' AND difficulty LIKE '%%%@%%' AND duration LIKE '%%%@%%'", typeSQL, difficultySQL, durationSQL];
-        
-
+//        const char *cString = [createSQL cStringUsingEncoding:NSASCIIStringEncoding];
         ////////////////////////////////////////////////////////////////////
         
         if (sqlite3_prepare(db, sql, -1, &sqlStatement, NULL) != SQLITE_OK) {
@@ -62,13 +55,13 @@
         //...
         while (sqlite3_step(sqlStatement)==SQLITE_ROW) {
            
-            workoutList *MyWorkout = [[workoutList alloc]init];
-            MyWorkout.workoutId = sqlite3_column_int(sqlStatement, 0);
-          MyWorkout.type = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement,1)];
-           MyWorkout.difficulty = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 2)];
-            MyWorkout.duration = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 3)];
-            MyWorkout.description = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 4)];
-           [workoutArray addObject:MyWorkout];
+        workoutList *MyWorkout = [[workoutList alloc]init];
+        MyWorkout.workoutId = sqlite3_column_int(sqlStatement, 0);
+        MyWorkout.type = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement,1)];
+        MyWorkout.difficulty = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 2)];
+        MyWorkout.duration = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 3)];
+        MyWorkout.description = [NSString stringWithUTF8String:(char *) sqlite3_column_text(sqlStatement, 4)];
+        [workoutArray addObject:MyWorkout];
        }
     }
     @catch (NSException *exception) {
@@ -82,6 +75,8 @@
     
     
 }
+
+
 
 
 @end
