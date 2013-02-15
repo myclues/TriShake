@@ -12,8 +12,52 @@
 #import <sqlite3.h>
 #import "ViewController.h"
 
+#define kTypeComponent 0
+#define kDifficultyComponent 1
+#define kDurationComponent 2
+
+@class ViewController; 
+
+
 
 @implementation MyWorkoutList
+
+
+@synthesize typeSQL = _typeSQL;
+@synthesize difficultySQL = _difficultySQL;
+@synthesize durationSQL = _durationSQL;
+@synthesize pickerView;
+//@synthesize rowOneItems;
+//@synthesize rowTwoItems;
+//@synthesize rowThreeItems;
+
+//-(UIPickerView *)pickerView{
+//    _pickerView = [[alloc] init];
+//    return _pickerView;
+//}
+
+-(NSString *)typeSQL
+{
+    _typeSQL = [[NSString alloc] init];
+    NSInteger rowOne = [pickerView selectedRowInComponent:kTypeComponent];
+    _typeSQL = [rowOneItems objectAtIndex:rowOne];
+    return _typeSQL;
+}
+-(NSString *)difficultySQL
+{
+    _typeSQL = [[NSString alloc] init];
+    NSInteger rowOne = [pickerView selectedRowInComponent:kTypeComponent];
+    _typeSQL = [rowOneItems objectAtIndex:rowOne];
+    return _typeSQL;
+}
+-(NSString *)durationSQL
+{
+    _durationSQL = [[NSString alloc] init];
+    NSInteger rowThree = [pickerView selectedRowInComponent:kDurationComponent];
+    _durationSQL = [rowThreeItems objectAtIndex:rowThree];
+    return _durationSQL;
+}
+
 
 - (NSMutableArray *) getMyWorkout{
     //sqlite3 *db;
@@ -39,12 +83,14 @@
         //SQL statement for Picker View////
         //////////////////////////////////
         //sqlite3_stmt *pickerStatement;
-//        NSString *typeSQL;
-//        NSString *difficultySQL;
-//        NSString *durationSQL;
-
+//        typeSQL = [[NSString alloc] init];
+//        difficultySQL=[[NSString alloc] init];
+//        durationSQL = [[NSString alloc] init];
 //        
-//        NSString *createSQL = [NSString stringWithFormat: @"SELECT description FROM workoutTbl WHERE type LIKE '%%%@%%' AND difficulty LIKE '%%%@%%' AND duration LIKE '%%%@%%'", typeSQL, difficultySQL, durationSQL];
+        
+        
+        
+       // NSString *createSQL = [NSString stringWithFormat: @"SELECT description FROM workoutTbl WHERE type LIKE '%%%@%%' AND difficulty LIKE '%%%@%%' AND duration LIKE '%%%@%%'", typeSQL, difficultySQL, durationSQL];
 //        const char *cString = [createSQL cStringUsingEncoding:NSASCIIStringEncoding];
         ////////////////////////////////////////////////////////////////////
         

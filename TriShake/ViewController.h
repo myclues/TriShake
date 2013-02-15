@@ -8,12 +8,18 @@
 
 #import <UIKit/UIKit.h>
 
+@class MyWorkoutList;
+
 @interface ViewController : UIViewController <UIPickerViewDelegate,UIPickerViewDataSource>
 {
     NSMutableArray *workouts;
+    //2/14 add global NSStrings
+    NSString *typeSQL;
+    NSString *difficultySQL;
+    NSString *durationSQL;
         
 }
-
+//2/14 add gloabl SQL NSStrings
 @property(nonatomic,retain) NSMutableArray *workouts;
 @property (strong, nonatomic) IBOutlet UIPickerView *pickerView;
 @property (strong, nonatomic )NSMutableArray *rowOneItems;
@@ -25,8 +31,10 @@
 @property (strong, nonatomic) IBOutlet UILabel *workoutDescriptionLabel;
 
 
+@property (strong,nonatomic) MyWorkoutList *secondClass;
+
+
 - (IBAction)findWorkout:(id)sender;
 
-- (void)setSQLStatement;
 
 @end

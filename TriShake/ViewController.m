@@ -10,12 +10,15 @@
 #define kDifficultyComponent 1
 #define kDurationComponent 2
 
+@class MyWorkoutList;
+
 
 @interface ViewController (){
     NSMutableArray *rowOneItems;
     NSMutableArray *rowTwoItems;
     NSMutableArray *rowThreeItems;
 }
+
 @end
 
 @implementation ViewController
@@ -31,6 +34,10 @@
 
 - (void)viewDidLoad
 {
+    
+    MyWorkoutList *secondClass = [[MyWorkoutList alloc] init];
+    self.workoutDescriptionLabel.text = secondClass.typeSQL;
+    NSLog(@"%@", secondClass.typeSQL);
     
     MyWorkoutList * myworkouts =[[MyWorkoutList alloc] init];
     self.workouts = [myworkouts getMyWorkout];
@@ -104,18 +111,6 @@
     }
 }
 
-//- (void)setSQLStatement {
-//    NSInteger rowOne = [pickerView selectedRowInComponent:kTypeComponent];
-//    NSInteger rowTwo = [pickerView selectedRowInComponent:kDifficultyComponent];
-//    NSInteger rowThree = [pickerView selectedRowInComponent:kDurationComponent];
-//    
-//    
-//    NSString *typeSQL = [rowOneItems objectAtIndex:rowOne];
-//    NSString *difficultySQL = [rowTwoItems objectAtIndex:rowTwo];
-//    NSString *durationSQL = [rowTwoItems objectAtIndex:rowThree];
-//    NSLog(@"sql statement: %@, %@, %@", typeSQL, difficultySQL, durationSQL);
-//}
-
 - (IBAction)findWorkout:(id)sender {
     //set labels to show what the user picked
     NSInteger rowOne = [pickerView selectedRowInComponent:kTypeComponent];
@@ -131,12 +126,14 @@
     //self.workoutDescriptionLabel.text = [workoutArray componentsJoinedByString:@" "];
     
     //[MyWorkoutList alloc];
+    typeSQL = [[NSString alloc] init];
+    difficultySQL=[[NSString alloc] init];
+    durationSQL = [[NSString alloc] init];
     
     NSString *typeSQL = [rowOneItems objectAtIndex:rowOne];
     NSString *difficultySQL = [rowTwoItems objectAtIndex:rowTwo];
     NSString *durationSQL = [rowThreeItems objectAtIndex:rowThree];
     NSLog(@"sql statement: %@, %@, %@", typeSQL, difficultySQL, durationSQL);
-    
 
     NSString *createSQL = [NSString stringWithFormat: @"SELECT description FROM workoutTbl WHERE type LIKE '%@' AND difficulty LIKE '%@' AND duration LIKE '%@'", typeSQL, difficultySQL, durationSQL];
     
