@@ -31,10 +31,6 @@
 //@synthesize rowTwoItems;
 //@synthesize rowThreeItems;
 
-//-(UIPickerView *)pickerView{
-//    _pickerView = [[alloc] init];
-//    return _pickerView;
-//}
 
 -(NSString *)typeSQL
 {
@@ -86,11 +82,8 @@
 //        typeSQL = [[NSString alloc] init];
 //        difficultySQL=[[NSString alloc] init];
 //        durationSQL = [[NSString alloc] init];
-//        
         
-        
-        
-       // NSString *createSQL = [NSString stringWithFormat: @"SELECT description FROM workoutTbl WHERE type LIKE '%%%@%%' AND difficulty LIKE '%%%@%%' AND duration LIKE '%%%@%%'", typeSQL, difficultySQL, durationSQL];
+        //NSString *createSQL = [NSString stringWithFormat: @"SELECT description FROM workoutTbl WHERE type LIKE '%%%@%%' AND difficulty LIKE '%%%@%%' AND duration LIKE '%%%@%%'", _typeSQL, _difficultySQL, _durationSQL];
 //        const char *cString = [createSQL cStringUsingEncoding:NSASCIIStringEncoding];
         ////////////////////////////////////////////////////////////////////
         
