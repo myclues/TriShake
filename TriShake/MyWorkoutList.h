@@ -27,6 +27,7 @@
 - (UIPickerView *)pickerView;
 
 - (NSMutableArray *) getMyWorkout;
+- (void) findWorkoutSQL;
 
 
 @end

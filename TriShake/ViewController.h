@@ -7,17 +7,19 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <sqlite3.h>
 
 @class MyWorkoutList;
 
 @interface ViewController : UIViewController <UIPickerViewDelegate,UIPickerViewDataSource>
 {
     NSMutableArray *workouts;
+    sqlite3 *db;
     //2/14 add global NSStrings
-    NSString *typeSQL;
-    NSString *difficultySQL;
-    NSString *durationSQL;
-        
+//    NSString *typeSQL;
+//    NSString *difficultySQL;
+//    NSString *durationSQL;
+    
 }
 //2/14 add gloabl SQL NSStrings
 @property(nonatomic,retain) NSMutableArray *workouts;
@@ -29,9 +31,12 @@
 @property (strong, nonatomic) IBOutlet UILabel *workoutDifficultyLabel;
 @property (strong, nonatomic) IBOutlet UILabel *workoutDurationLabel;
 @property (strong, nonatomic) IBOutlet UILabel *workoutDescriptionLabel;
+@property (nonatomic, assign) NSString *typeSQL;
+@property (nonatomic, assign) NSString *difficultySQL;
+@property (nonatomic, assign) NSString *durationSQL;
 
 
-@property (strong,nonatomic) MyWorkoutList *secondClass;
+//@property (strong,nonatomic) MyWorkoutList *secondClass;
 
 
 - (IBAction)findWorkout:(id)sender;

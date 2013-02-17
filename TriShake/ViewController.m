@@ -10,7 +10,7 @@
 #define kDifficultyComponent 1
 #define kDurationComponent 2
 
-@class MyWorkoutList;
+//@class MyWorkoutList;
 
 
 @interface ViewController (){
@@ -31,16 +31,22 @@
 @synthesize workoutDurationLabel;
 @synthesize workoutDifficultyLabel;
 @synthesize workoutDescriptionLabel;
+@synthesize typeSQL;
+@synthesize difficultySQL;
+@synthesize durationSQL;
 
 - (void)viewDidLoad
 {
     
-    MyWorkoutList *secondClass = [[MyWorkoutList alloc] init];
-    self.workoutDescriptionLabel.text = secondClass.typeSQL;
-    NSLog(@"%@", secondClass.typeSQL);
+//    MyWorkoutList *secondClass = [[MyWorkoutList alloc] init];
+//    self.workoutDescriptionLabel.text = secondClass.typeSQL;
+//    NSLog(@"%@", secondClass.typeSQL);
     
     MyWorkoutList * myworkouts =[[MyWorkoutList alloc] init];
     self.workouts = [myworkouts getMyWorkout];
+    
+    //set a default description label
+    //[self.workoutDescriptionLabel setText:((workoutList *) [self.workouts objectAtIndex:0]).description];
 
     //shrink picker view
     pickerView.transform = CGAffineTransformMakeScale(.8, 0.8);
@@ -99,51 +105,47 @@
 - (void)pickerView:(UIPickerView *)pickerView didSelectRow:(NSInteger)row
 	   inComponent:(NSInteger)component {
     
-    //log/see  which row is selected in each component
-    if(component ==1) {
-          return NSLog(@"Selected Difficulty: %@",[rowTwoItems objectAtIndex:row]);
-    }
-    else if(component ==2) {
-    return NSLog(@"Selected Duration: %@",[rowThreeItems objectAtIndex:row]);
-    }
-    else{
-        NSLog(@"Selected Type: %@",[rowOneItems objectAtIndex:row]);
-    }
+//    NSInteger rowOne = [self.pickerView selectedRowInComponent:kTypeComponent];
+//    typeSQL = [rowOneItems objectAtIndex:rowOne];
+//    self.workoutTypeLabel.text = typeSQL;
+//    
+//    NSInteger rowTwo = [self.pickerView selectedRowInComponent:kDifficultyComponent];
+//    difficultySQL = [rowTwoItems objectAtIndex:rowTwo];
+//    self.workoutDifficultyLabel.text = [rowTwoItems objectAtIndex:rowTwo];
+//    
+//    NSInteger rowThree = [self.pickerView selectedRowInComponent:kDurationComponent];
+//    durationSQL = [rowThreeItems objectAtIndex:rowThree];
+//    self.workoutDurationLabel.text = [rowThreeItems objectAtIndex:rowThree];
+//    
 }
 
 - (IBAction)findWorkout:(id)sender {
     //set labels to show what the user picked
-    NSInteger rowOne = [pickerView selectedRowInComponent:kTypeComponent];
-    self.workoutTypeLabel.text = [rowOneItems objectAtIndex:rowOne];
     
+    NSInteger rowOne = [pickerView selectedRowInComponent:kTypeComponent];
+    self.typeSQL = [rowOneItems objectAtIndex:rowOne];
+    self.workoutTypeLabel.text = typeSQL;
+   
     NSInteger rowTwo = [pickerView selectedRowInComponent:kDifficultyComponent];
+    self.difficultySQL = [rowTwoItems objectAtIndex:rowTwo];
     self.workoutDifficultyLabel.text = [rowTwoItems objectAtIndex:rowTwo];
     
     NSInteger rowThree = [pickerView selectedRowInComponent:kDurationComponent];
+    self.durationSQL = [rowThreeItems objectAtIndex:rowThree];
     self.workoutDurationLabel.text = [rowThreeItems objectAtIndex:rowThree];
-    
-   // NSMutableArray *workoutArray;
-    //self.workoutDescriptionLabel.text = [workoutArray componentsJoinedByString:@" "];
-    
-    //[MyWorkoutList alloc];
-    typeSQL = [[NSString alloc] init];
-    difficultySQL=[[NSString alloc] init];
-    durationSQL = [[NSString alloc] init];
-    
-    NSString *typeSQL = [rowOneItems objectAtIndex:rowOne];
-    NSString *difficultySQL = [rowTwoItems objectAtIndex:rowTwo];
-    NSString *durationSQL = [rowThreeItems objectAtIndex:rowThree];
-    NSLog(@"sql statement: %@, %@, %@", typeSQL, difficultySQL, durationSQL);
 
-    NSString *createSQL = [NSString stringWithFormat: @"SELECT description FROM workoutTbl WHERE type LIKE '%@' AND difficulty LIKE '%@' AND duration LIKE '%@'", typeSQL, difficultySQL, durationSQL];
     
-    [self.workoutDescriptionLabel setText:createSQL];
-    
-    //show description- test for now (2/7)
-//       workoutList *aWorkout = (workoutList *) [self.workouts objectAtIndex:rowTwo];
-//       [self.workoutDescriptionLabel setText:aWorkout.description];
+    //show a description
+    workoutList *aWorkout = (workoutList *) [self.workouts objectAtIndex:rowOne];
+       [self.workoutDescriptionLabel setText:aWorkout.description];
 
-//    }
+//
+//    NSString *createSQL = [NSString stringWithFormat: @"SELECT description FROM workoutTbl WHERE type = '%@' AND difficulty = '%@' AND duration = '%@'", typeSQL, difficultySQL, durationSQL];
+//    const char *sql = [createSQL cStringUsingEncoding:NSASCIIStringEncoding];
+//    NSLog(@"%@", [NSString stringWithUTF8String:sql]);
+
 }
+
+
 
 @end
