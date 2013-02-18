@@ -9,6 +9,8 @@
 #define kTypeComponent 0
 #define kDifficultyComponent 1
 #define kDurationComponent 2
+//MLIU 2013-02-18: default message for 0 matching workouts found
+#define NO_WORKOUTS_FOUND_MESSAGE @"Sorry, no workouts were found for these options."
 
 //@class MyWorkoutList;
 
@@ -41,7 +43,7 @@
 //    MyWorkoutList *secondClass = [[MyWorkoutList alloc] init];
 //    self.workoutDescriptionLabel.text = secondClass.typeSQL;
 //    NSLog(@"%@", secondClass.typeSQL);
-    
+
     MyWorkoutList * myworkouts =[[MyWorkoutList alloc] init];
     self.workouts = [myworkouts getMyWorkout];
     
@@ -72,8 +74,8 @@
     [self setWorkoutDifficultyLabel:nil];
     [self setWorkoutDurationLabel:nil];
     [super viewDidUnload];
-    }
-    
+}
+
 
 
 #pragma mark - Picker Methods -
@@ -134,18 +136,23 @@
     self.durationSQL = [rowThreeItems objectAtIndex:rowThree];
     self.workoutDurationLabel.text = [rowThreeItems objectAtIndex:rowThree];
 
-    
-    //show a description
-    workoutList *aWorkout = (workoutList *) [self.workouts objectAtIndex:rowOne];
-       [self.workoutDescriptionLabel setText:aWorkout.description];
+    // MLIU 2013-02-18: prepare a new list of workouts
+    MyWorkoutList *workoutData = [[MyWorkoutList alloc] init];
+    NSArray *workout = [workoutData getWorkoutListwithType:self.typeSQL withDifficulty:self.difficultySQL withLength:[self convertDurationToSQLValue:self.durationSQL]];
 
-//
-//    NSString *createSQL = [NSString stringWithFormat: @"SELECT description FROM workoutTbl WHERE type = '%@' AND difficulty = '%@' AND duration = '%@'", typeSQL, difficultySQL, durationSQL];
-//    const char *sql = [createSQL cStringUsingEncoding:NSASCIIStringEncoding];
-//    NSLog(@"%@", [NSString stringWithUTF8String:sql]);
-
+    // MLIU 2013-02-18: handle 0 matching results
+    if ([workout count] > 0) {
+        // show the first matching workout - swap in code for multiple matches here
+        self.workoutDescriptionLabel.text = [workout objectAtIndex:0];
+    } else {
+        self.workoutDescriptionLabel.text = NO_WORKOUTS_FOUND_MESSAGE;
+    }
 }
 
+- (NSString *)convertDurationToSQLValue:(NSString *)input {
+    // MLIU 2013-02-18: the picker says "## mins" but the database only has the "##" part
+    return [[input componentsSeparatedByString:@" mins"] objectAtIndex:0];
+}
 
 
 @end
